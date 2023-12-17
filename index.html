@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Books</h1>
+    <input type="text" id="searchInput" placeholder="Search">
+    <p></p>
+    <label for="pubDate">Show publishing dates after:</label>
+    <input type="date" id="dateFilter">
+    <label for="minRating">Min Rating:</label>
+    <input type="number" id="minRating" placeholder="Min Rating" step="0.5">
+    <label for="maxRating">Max Rating:</label>
+    <input type="number" id="maxRating" placeholder="Max Rating" step="0.5">
+    <table id="myTable">
+      <tr class="header">
+        <th style="width:20vh;" id="alpha">TITLE</th>
+        <th style="width:20vh;" id="author">AUTHORS</th>
+        <th style="width:20vh;" id="year">PUBLICATION DATE</th>
+        <th style="width:10vh;" id="rating">AVERAGE RATING</th>
+        <th style="width:20vh;">PUBLISHER</th>
+      </tr>
+    </table>
+    <div id="book-container">
+    </div>
+
+  </body>
+</html>

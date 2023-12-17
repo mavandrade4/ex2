@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Newsreader-Bold';
+  src: url('font/Newsreader-Bold.ttf') format('woff');
+}
+@font-face {
+  font-family: 'Newsreader-Regular';
+  src: url('font/Newsreader-Regular.ttf') format('woff');
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: beige;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: Newsreader-Bold;
+}
+
+#searchInput {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#minRating, #maxRating {
+  width: 50px;
+}
+
+#book-container {
+  margin-top: 20px;
+}
+
+#myTable {
+  width: 90vw;
+  border-collapse: collapse;
+  font-family: Newsreader-Bold;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myTable th{
+  background-color: #442212;
+  color: #ffff;
+  border: 2px solid #442212;
+  padding: 8px;
+  text-align: left;
+}
+
+#myTable th:hover{
+  background-color: #ffff;
+  color: #442212;
+}
+
+#myTable td {
+  font-family: Newsreader-Regular;
+  background-color: #ffff;
+  border: 2px solid #442212;
+  max-width: 120px;
+
+  padding: 8px;
+  text-align: left;
+  
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+
+#myTable td:nth-child(4),
+#myTable th:nth-child(4),
+#myTable td:nth-child(3),
+#myTable th:nth-child(3) {
+  max-width: 70px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
