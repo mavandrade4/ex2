@@ -142,22 +142,42 @@ class App {
     this.bookInfo.forEach(info => {
       const titleMatches = info.title.toUpperCase().includes(searchTerm);
       const authorMatches = info.authors.toUpperCase().includes(searchTerm);
-      //const dateMatches = !selectedDate || new Date(info.publication_date) >= new Date(selectedDate);
-      //const ratingMatches = info.average_rating >= minRating && info.average_rating <= maxRating;
+      const dateMatches = !selectedDate || new Date(info.publication_date) >= new Date(selectedDate);
+      const ratingMatches = info.average_rating >= minRating && info.average_rating <= maxRating;
   
-      //|| dateMatches || ratingMatches
-      if (titleMatches || authorMatches) { 
+      if ((titleMatches || authorMatches) && dateMatches && ratingMatches) {
         const row = table.insertRow(-1);
         const cell1 = row.insertCell(0);
         cell1.innerHTML = info.title;
         const cell2 = row.insertCell(1);
         cell2.innerHTML = info.authors;
         const cell3 = row.insertCell(2);
-        cell3.innerHTML = info.publication_date;
+        cell3.innerHTML = this.convertDateFormat(info.publication_date);
         const cell4 = row.insertCell(3);
         cell4.innerHTML = info.average_rating;
       }
     });
+  }
+
+  convertDateFormat(inputDate) {
+    var dateComponents = inputDate.split('/');
+
+    var month = parseInt(dateComponents[0], 10);
+    var day = parseInt(dateComponents[1], 10);
+    var year = parseInt(dateComponents[2], 10);
+
+    var dateObject = new Date(year, month - 1, day);
+
+    var convertedDay = dateObject.getDate();
+    var convertedMonth = dateObject.getMonth() + 1;
+    var convertedYear = dateObject.getFullYear();
+
+    convertedDay = convertedDay < 10 ? '0' + convertedDay : convertedDay;
+    convertedMonth = convertedMonth < 10 ? '0' + convertedMonth : convertedMonth;
+
+    var resultString = convertedDay + '/' + convertedMonth + '/' + convertedYear;
+
+    return resultString;
   }
 }
 
