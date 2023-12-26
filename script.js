@@ -1,4 +1,4 @@
-const JSON_PATH = 'books1.json';
+const JSON_PATH = 'books.json';
 
 //////// SORT FUNC
 
