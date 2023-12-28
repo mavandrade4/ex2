@@ -8,14 +8,18 @@
   </head>
   <body>
     <h1>Books</h1>
-    <input type="text" id="searchInput" placeholder="Search">
-    <p></p>
-    <label for="dateFilter">Show publishing dates after:</label>
-    <input type="date" id="dateFilter">
-    <label for="minRating">Min Rating:</label>
-    <input type="number" id="minRating" placeholder="Min Rating" step="0.5">
-    <label for="maxRating">Max Rating:</label>
-    <input type="number" id="maxRating" placeholder="Max Rating" step="0.5">
+    <div id="container">
+      <input type="text" id="searchInput" placeholder="Search">
+      <p></p>
+      <label for="dateFilter">Show publishing dates after:</label>
+      <input type="date" id="dateFilter">
+      <p></p>
+      <label for="minRating">Minimum Rating:</label>
+      <input type="number" id="minRating" placeholder="Min Rating" step="0.5">
+      <p></p>
+      <label for="maxRating">Maximum Rating:</label>
+      <input type="number" id="maxRating" placeholder="Max Rating" step="0.5">
+    </div>
     <table id="myTable">
       <tr class="header">
         <th style="width:20vh;" id="alpha">TITLE</th>
